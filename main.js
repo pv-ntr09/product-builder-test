@@ -1,5 +1,6 @@
 const generateBtn = document.getElementById('generate-btn');
 const numberElements = document.querySelectorAll('.number');
+const themeSwitch = document.getElementById('checkbox');
 
 function generateNumbers() {
     const numbers = new Set();
@@ -35,5 +36,24 @@ function colorizeNumber(element, number) {
     element.style.color = 'white';
 }
 
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    }
+}
 
 generateBtn.addEventListener('click', displayNumbers);
+themeSwitch.addEventListener('change', switchTheme, false);
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeSwitch.checked = true;
+    }
+}
