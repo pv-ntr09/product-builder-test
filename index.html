@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="theme-switch-container">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
     <div class="container">
         <h1>로또 번호 생성기</h1>
         <div class="numbers-container">
@@ -19,10 +25,7 @@
         </div>
         <button id="generate-btn">번호 생성</button>
     </div>
-    <script src="main.js"></script>
-</body>
-</html>
-<div class="contact-container">
+    <div class="contact-container">
         <h2>제휴 문의</h2>
         <form action="https://formspree.io/f/mreapjvq" method="POST">
             <div class="form-group">
@@ -40,3 +43,6 @@
             <button type="submit">보내기</button>
         </form>
     </div>
+    <script src="main.js"></script>
+</body>
+</html>

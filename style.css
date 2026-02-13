@@ -21,7 +21,127 @@ body.dark-mode {
     --input-border: #666;
 }
 
-/* ... existing styles ... */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color), 0 6px 20px var(--shadow-color);
+    transition: background-color 0.3s;
+}
+
+.numbers-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background-color: var(--number-bg);
+    color: var(--number-text);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#generate-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#generate-btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.theme-switch-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
 
 .contact-container {
     text-align: center;
@@ -65,7 +185,7 @@ body.dark-mode {
     border-radius: 5px;
     background-color: var(--input-bg, white);
     color: var(--text-color);
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
     transition: border-color 0.3s, background-color 0.3s;
 }
 
