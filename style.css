@@ -214,3 +214,14 @@ input:checked + .slider:before {
     background-color: #45a049;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+
+#disqus_thread {
+    margin-top: 2rem;
+    width: 100%; /* Ensure it takes full width of its container */
+    max-width: 800px; /* Limit maximum width for better readability */
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color), 0 6px 20px var(--shadow-color);
+}
